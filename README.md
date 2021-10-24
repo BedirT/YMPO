@@ -5,7 +5,7 @@ user edit their playlists and organize in other playlists.
 This is a personal project, I have built this to help me organize my music playlists. I am 
 sharing my work in case anyone wants to use it. Enjoy!
 
-### Example Need:
+#### Sample Use Case: 
 If you have a cluttered playlist that you dump all the songs you like (like me), and you are
 lazy to go over one by one and click all over Youtube to clean things up, then this is a really
 simple app for you.
@@ -21,8 +21,8 @@ pip install ytmusicapi
 ```
 
 After installation we have two steps authentication instructions.
-1- Copy authentication headers [-as decribed here-](https://ytmusicapi.readthedocs.io/en/latest/setup.html#copy-authentication-headers)
-2- Run `setup.py`, paste the authentiaction header (step 1)
+1. Copy authentication headers [-as decribed here-](https://ytmusicapi.readthedocs.io/en/latest/setup.html#copy-authentication-headers)
+2. Run `setup.py`, paste the authentiaction header (step 1)
 ```python
 python3 setup.py
 ```
