@@ -44,32 +44,29 @@ def main():
     num_songs = int(input("Enter number of songs to distribute(increments of 100): "))
     
     # get new playlists to distribute to
-    # playlist_ids, playlist_names = get_playlists(ytmusic)
+    playlist_ids, playlist_names = get_playlists(ytmusic)
 
     # parse playlist and ask user for which playlist to put the song in
     playlist_to_distribute = ytmusic.get_playlist(main_playlist_id, limit= num_songs)
-    print(len(playlist_to_distribute))
 
-    ct = 0
     for song in playlist_to_distribute['tracks']:
         print("\nSong: " + song['title'])
-        ct += 1
         # get the artists
         print("Artist: ", end="")
         for artist in song['artists']:
             print(artist['name'], end=" ")
         print("")
+
         # display the playlist options to choose from
-        # print_playlists_menu(playlist_names)
+        print_playlists_menu(playlist_names)
 
         # get user input for which playlist/s to put the song in
-        # playlist_choice = input("Enter playlist id(s) to put the song in(comma seperated): ")
-        # playlist_choice = playlist_choice.split(",")
+        playlist_choice = input("Enter playlist id(s) to put the song in(comma seperated): ")
+        playlist_choice = playlist_choice.split(",")
 
         # # distribute the song to the chosen playlists
-        # for choice in playlist_choice:  
-        #     ytmusic.add_playlist_items(playlist_ids[int(choice)], [song['videoId']])
-    print(ct)
+        for choice in playlist_choice:  
+            ytmusic.add_playlist_items(playlist_ids[int(choice)], [song['videoId']])
 
 if __name__ == "__main__":
     main()    
